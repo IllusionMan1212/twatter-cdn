@@ -5,9 +5,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/illusionman1212/twatter"
-
 	"github.com/gorilla/mux"
+	"github.com/illusionman1212/twatter-server/logger"
 	"github.com/joho/godotenv"
 	"github.com/rs/cors"
 )
@@ -27,7 +26,7 @@ func main() {
 	})
 
 	router := mux.NewRouter().StrictSlash(true)
-	routes.RegisterCdnRoutes(router) // no validation required
+	RegisterCdnRoutes(router)
 
 	port := os.Getenv("PORT")
 	if port == "" {
