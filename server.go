@@ -12,6 +12,8 @@ import (
 )
 
 func main() {
+	logger.Initialize()
+
 	err := godotenv.Load()
 	if err != nil {
 		logger.Fatal(err)
